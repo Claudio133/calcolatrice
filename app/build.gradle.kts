@@ -45,5 +45,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("io.apisense:rhino-android:1.1.1")
+    implementation("io.apisense:rhino-android:1.3.2")
 }
