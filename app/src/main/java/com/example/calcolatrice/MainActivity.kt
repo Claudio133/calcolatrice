@@ -68,14 +68,41 @@ class MainActivity : AppCompatActivity() {
         expression.movementMethod = ScrollingMovementMethod()
         expression.isActivated = true
         expression.isPressed = true
-        clear.setOnClickListener{
 
+        var str:String
+
+        clear.setOnClickListener{
+              expressionText(str:"0")
+            expression.textSize=60F
+            result.textSize=30F
+            resultText()
         }
         backSpace.setOnClickListener{
-
+         if(expression.text.toString().isNotEmpty()){
+             val lastIndex=expression.text.toString().lastIndex
+             str=expression.text.toString().substring(0,lastIndex)
+             expressionText(str)
+             resultText()
+         }
         }
-        divide.setOnClickListener{
+        percent.setOnClickListener(){
+            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
+                str=expression.text.toString()
+                expressionText(str)
+            }else {
+               str=expression.text.toString() + "%"
+               expressionText(str)
+            }
+        }
 
+        divide.setOnClickListener{
+            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
+                str=expression.text.toString()
+                expressionText(str)
+            }else {
+                str=expression.text.toString() + "/"
+                expressionText(str)
+            }
         }
         multiply.setOnClickListener{
 
@@ -122,5 +149,11 @@ class MainActivity : AppCompatActivity() {
         nine.setOnClickListener{
 
         }
+    }
+    private fun expressionText(str:String){
+        expression.text=str
+    }
+    private fun resultText(){
+
     }
 }
