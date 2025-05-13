@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
+import net.objecthunter.exp4j.ExpressionBuilder
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -72,7 +72,8 @@ class MainActivity : AppCompatActivity() {
         var str:String
 
         clear.setOnClickListener{
-              expressionText(str:"0")
+            str = "0"
+            expressionText(str)
             expression.textSize=60F
             result.textSize=30F
             resultText()
@@ -105,55 +106,186 @@ class MainActivity : AppCompatActivity() {
             }
         }
         multiply.setOnClickListener{
-
+            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
+                str=expression.text.toString()
+                expressionText(str)
+            }else {
+                str=expression.text.toString() + "*"
+                expressionText(str)
+            }
+        }
+        add.setOnClickListener{
+            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
+                str=expression.text.toString()
+                expressionText(str)
+            }else {
+                str=expression.text.toString() + "+"
+                expressionText(str)
+            }
         }
         subtract.setOnClickListener{
-
+            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
+                str=expression.text.toString()
+                expressionText(str)
+            }else {
+                str=expression.text.toString() + "-"
+                expressionText(str)
+            }
         }
         equal.setOnClickListener{
-
+            expression.textSize=30F
+            result.textSize=60F
         }
         dot.setOnClickListener{
-
+            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
+                str=expression.text.toString()
+                expressionText(str)
+            }else {
+                str=expression.text.toString() + "."
+                expressionText(str)
+            }
         }
         zero.setOnClickListener{
+  if(expression.text.toString().startsWith(prefix = "0")) {
+      str=expression.text.toString().replace(oldValue = "0", newValue = "") + "0"
+      expressionText(str)
+      resultText()
+  }else{
+      str=expression.text.toString()+"0"
+      expressionText(str)
+      resultText()
+  }
+  }
 
-        }
         doubleZero.setOnClickListener{
-
+        if(expression.text.toString().startsWith(prefix = "0")) {
+            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "00"
+            expressionText(str)
+            resultText()
+        }else{
+            str=expression.text.toString()+"00"
+            expressionText(str)
+            resultText()
+        }
         }
         one.setOnClickListener{
-
+        if(expression.text.toString().startsWith(prefix = "0")) {
+            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "1"
+            expressionText(str)
+            resultText()
+        }else{
+            str=expression.text.toString()+"1"
+            expressionText(str)
+            resultText()
+        }
         }
         two.setOnClickListener{
-
+        if(expression.text.toString().startsWith(prefix = "0")) {
+            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "2"
+            expressionText(str)
+            resultText()
+        }else{
+            str=expression.text.toString()+"2"
+            expressionText(str)
+            resultText()
+        }
         }
         three.setOnClickListener{
-
+        if(expression.text.toString().startsWith(prefix = "0")) {
+            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "3"
+            expressionText(str)
+            resultText()
+        }else{
+            str=expression.text.toString()+"3"
+            expressionText(str)
+            resultText()
+        }
         }
         four.setOnClickListener{
-
+        if(expression.text.toString().startsWith(prefix = "0")) {
+            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "4"
+            expressionText(str)
+            resultText()
+        }else{
+            str=expression.text.toString()+"4"
+            expressionText(str)
+            resultText()
+        }
         }
         five.setOnClickListener{
-
+        if(expression.text.toString().startsWith(prefix = "0")) {
+            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "5"
+            expressionText(str)
+            resultText()
+        }else{
+            str=expression.text.toString()+"5"
+            expressionText(str)
+            resultText()
+        }
         }
         six.setOnClickListener{
-
+        if(expression.text.toString().startsWith(prefix = "0")) {
+            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "6"
+            expressionText(str)
+            resultText()
+        }else{
+            str=expression.text.toString()+"6"
+            expressionText(str)
+            resultText()
+        }
         }
         seven.setOnClickListener{
-
+        if(expression.text.toString().startsWith(prefix = "0")) {
+            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "7"
+            expressionText(str)
+            resultText()
+        }else{
+            str=expression.text.toString()+"7"
+            expressionText(str)
+            resultText()
+        }
         }
         eight.setOnClickListener{
-
+        if(expression.text.toString().startsWith(prefix = "0")) {
+            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "8"
+            expressionText(str)
+            resultText()
+        }else{
+            str=expression.text.toString()+"8"
+            expressionText(str)
+            resultText()
+        }
         }
         nine.setOnClickListener{
-
+        if(expression.text.toString().startsWith(prefix = "0")) {
+            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "9"
+            expressionText(str)
+            resultText()
+        }else{
+            str=expression.text.toString()+"9"
+            expressionText(str)
+            resultText()
+        }
         }
     }
     private fun expressionText(str:String){
         expression.text=str
     }
-    private fun resultText(){
+    private fun resultText() {
+        val exp = expression.text.toString()
 
+        try {
+            val resultValue = ExpressionBuilder(exp).build().evaluate()
+            val longResult = resultValue.toLong()
+
+            if (resultValue == longResult.toDouble()) {
+                result.text = "=$longResult"
+            } else {
+                result.text = "=$resultValue"
+            }
+        } catch (e: Exception) {
+            result.text = "Errore"
+        }
     }
+
 }
