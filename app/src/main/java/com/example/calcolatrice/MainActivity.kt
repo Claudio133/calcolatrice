@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var result: TextView
     private lateinit var clear:Button
     private lateinit var backSpace:Button
-    private lateinit var percent:Button
+    private lateinit var sqrt:Button
     private lateinit var divide:Button
     private lateinit var multiply:Button
     private lateinit var add:Button
@@ -42,11 +42,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-       expression = findViewById(R.id.expression)
+        expression = findViewById(R.id.expression)
         result = findViewById(R.id.result)
         clear = findViewById(R.id.clear)
         backSpace = findViewById(R.id.backSpace)
-        percent = findViewById(R.id.percent)
+        sqrt = findViewById(R.id.sqrt)
         divide = findViewById(R.id.divide)
         multiply = findViewById(R.id.multiply)
         add = findViewById(R.id.add)
@@ -79,21 +79,23 @@ class MainActivity : AppCompatActivity() {
             resultText()
         }
         backSpace.setOnClickListener{
-         if(expression.text.toString().isNotEmpty()){
-             val lastIndex=expression.text.toString().lastIndex
-             str=expression.text.toString().substring(0,lastIndex)
-             expressionText(str)
-             resultText()
-         }
-        }
-        percent.setOnClickListener(){
-            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
-                str=expression.text.toString()
+            if(expression.text.toString().isNotEmpty()){
+                val lastIndex=expression.text.toString().lastIndex
+                str=expression.text.toString().substring(0,lastIndex)
                 expressionText(str)
-            }else {
-               str=expression.text.toString() + "%"
-               expressionText(str)
+                resultText()
             }
+        }
+        val sqrt = findViewById<Button>(R.id.sqrt)
+
+
+        sqrt.setOnClickListener {
+            val current = expression.text.toString()
+
+
+            val str = "sqrt($current)"
+            expressionText(str)
+            resultText()
         }
 
         divide.setOnClickListener{
@@ -146,126 +148,126 @@ class MainActivity : AppCompatActivity() {
             }
         }
         zero.setOnClickListener{
-  if(expression.text.toString().startsWith(prefix = "0")) {
-      str=expression.text.toString().replace(oldValue = "0", newValue = "") + "0"
-      expressionText(str)
-      resultText()
-  }else{
-      str=expression.text.toString()+"0"
-      expressionText(str)
-      resultText()
-  }
-  }
+            if(expression.text.toString().startsWith(prefix = "0")) {
+                str=expression.text.toString().replace(oldValue = "0", newValue = "") + "0"
+                expressionText(str)
+                resultText()
+            }else{
+                str=expression.text.toString()+"0"
+                expressionText(str)
+                resultText()
+            }
+        }
 
         doubleZero.setOnClickListener{
-        if(expression.text.toString().startsWith(prefix = "0")) {
-            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "00"
-            expressionText(str)
-            resultText()
-        }else{
-            str=expression.text.toString()+"00"
-            expressionText(str)
-            resultText()
-        }
+            if(expression.text.toString().startsWith(prefix = "0")) {
+                str=expression.text.toString().replace(oldValue = "0", newValue = "") + "00"
+                expressionText(str)
+                resultText()
+            }else{
+                str=expression.text.toString()+"00"
+                expressionText(str)
+                resultText()
+            }
         }
         one.setOnClickListener{
-        if(expression.text.toString().startsWith(prefix = "0")) {
-            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "1"
-            expressionText(str)
-            resultText()
-        }else{
-            str=expression.text.toString()+"1"
-            expressionText(str)
-            resultText()
-        }
+            if(expression.text.toString().startsWith(prefix = "0")) {
+                str=expression.text.toString().replace(oldValue = "0", newValue = "") + "1"
+                expressionText(str)
+                resultText()
+            }else{
+                str=expression.text.toString()+"1"
+                expressionText(str)
+                resultText()
+            }
         }
         two.setOnClickListener{
-        if(expression.text.toString().startsWith(prefix = "0")) {
-            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "2"
-            expressionText(str)
-            resultText()
-        }else{
-            str=expression.text.toString()+"2"
-            expressionText(str)
-            resultText()
-        }
+            if(expression.text.toString().startsWith(prefix = "0")) {
+                str=expression.text.toString().replace(oldValue = "0", newValue = "") + "2"
+                expressionText(str)
+                resultText()
+            }else{
+                str=expression.text.toString()+"2"
+                expressionText(str)
+                resultText()
+            }
         }
         three.setOnClickListener{
-        if(expression.text.toString().startsWith(prefix = "0")) {
-            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "3"
-            expressionText(str)
-            resultText()
-        }else{
-            str=expression.text.toString()+"3"
-            expressionText(str)
-            resultText()
-        }
+            if(expression.text.toString().startsWith(prefix = "0")) {
+                str=expression.text.toString().replace(oldValue = "0", newValue = "") + "3"
+                expressionText(str)
+                resultText()
+            }else{
+                str=expression.text.toString()+"3"
+                expressionText(str)
+                resultText()
+            }
         }
         four.setOnClickListener{
-        if(expression.text.toString().startsWith(prefix = "0")) {
-            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "4"
-            expressionText(str)
-            resultText()
-        }else{
-            str=expression.text.toString()+"4"
-            expressionText(str)
-            resultText()
-        }
+            if(expression.text.toString().startsWith(prefix = "0")) {
+                str=expression.text.toString().replace(oldValue = "0", newValue = "") + "4"
+                expressionText(str)
+                resultText()
+            }else{
+                str=expression.text.toString()+"4"
+                expressionText(str)
+                resultText()
+            }
         }
         five.setOnClickListener{
-        if(expression.text.toString().startsWith(prefix = "0")) {
-            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "5"
-            expressionText(str)
-            resultText()
-        }else{
-            str=expression.text.toString()+"5"
-            expressionText(str)
-            resultText()
-        }
+            if(expression.text.toString().startsWith(prefix = "0")) {
+                str=expression.text.toString().replace(oldValue = "0", newValue = "") + "5"
+                expressionText(str)
+                resultText()
+            }else{
+                str=expression.text.toString()+"5"
+                expressionText(str)
+                resultText()
+            }
         }
         six.setOnClickListener{
-        if(expression.text.toString().startsWith(prefix = "0")) {
-            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "6"
-            expressionText(str)
-            resultText()
-        }else{
-            str=expression.text.toString()+"6"
-            expressionText(str)
-            resultText()
-        }
+            if(expression.text.toString().startsWith(prefix = "0")) {
+                str=expression.text.toString().replace(oldValue = "0", newValue = "") + "6"
+                expressionText(str)
+                resultText()
+            }else{
+                str=expression.text.toString()+"6"
+                expressionText(str)
+                resultText()
+            }
         }
         seven.setOnClickListener{
-        if(expression.text.toString().startsWith(prefix = "0")) {
-            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "7"
-            expressionText(str)
-            resultText()
-        }else{
-            str=expression.text.toString()+"7"
-            expressionText(str)
-            resultText()
-        }
+            if(expression.text.toString().startsWith(prefix = "0")) {
+                str=expression.text.toString().replace(oldValue = "0", newValue = "") + "7"
+                expressionText(str)
+                resultText()
+            }else{
+                str=expression.text.toString()+"7"
+                expressionText(str)
+                resultText()
+            }
         }
         eight.setOnClickListener{
-        if(expression.text.toString().startsWith(prefix = "0")) {
-            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "8"
-            expressionText(str)
-            resultText()
-        }else{
-            str=expression.text.toString()+"8"
-            expressionText(str)
-            resultText()
-        }
+            if(expression.text.toString().startsWith(prefix = "0")) {
+                str=expression.text.toString().replace(oldValue = "0", newValue = "") + "8"
+                expressionText(str)
+                resultText()
+            }else{
+                str=expression.text.toString()+"8"
+                expressionText(str)
+                resultText()
+            }
         }
         nine.setOnClickListener{
-        if(expression.text.toString().startsWith(prefix = "0")) {
-            str=expression.text.toString().replace(oldValue = "0", newValue = "") + "9"
-            expressionText(str)
-            resultText()
-        }else{
-            str=expression.text.toString()+"9"
-            expressionText(str)
-            resultText()
-        }
+            if(expression.text.toString().startsWith(prefix = "0")) {
+                str=expression.text.toString().replace(oldValue = "0", newValue = "") + "9"
+                expressionText(str)
+                resultText()
+            }else{
+                str=expression.text.toString()+"9"
+                expressionText(str)
+                resultText()
+            }
         }
     }
     private fun expressionText(str:String){
