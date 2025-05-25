@@ -328,6 +328,7 @@
         android:id="@+id/expression"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:background="@color/white"
         android:clickable="false"
         android:cursorVisible="false"
@@ -342,13 +343,12 @@
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/result"
-        tools:layout_editor_absoluteX="-16dp" />
+        tools:layout_editor_absoluteX="1dp" />
 
     <EditText
         android:id="@+id/result"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:minHeight="48dp"
+        android:layout_width="412dp"
+        android:layout_height="84dp"
         android:background="@color/white"
         android:clickable="false"
         android:cursorVisible="false"
@@ -356,14 +356,15 @@
         android:focusable="false"
         android:gravity="end"
         android:inputType="text"
+        android:minHeight="48dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:scrollHorizontally="true"
         android:singleLine="true"
         android:text="=0"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="-1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
