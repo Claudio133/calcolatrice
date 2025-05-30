@@ -327,7 +327,7 @@
         android:singleLine="true"
         android:text="0"
         android:textColor="@color/black"
-        android:textSize="60sp"
+        android:textSize="61sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/result"
         tools:layout_editor_absoluteX="1dp" />
