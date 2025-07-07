@@ -66,8 +66,7 @@ class MainActivity : AppCompatActivity() {
         nine = findViewById(R.id.nine)
 
         expression.movementMethod = ScrollingMovementMethod()
-        expression.isActivated = true
-        expression.isPressed = true
+
 
         var str:String
 
