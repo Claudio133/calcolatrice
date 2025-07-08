@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         divide.setOnClickListener{
-            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
+            if(expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
                 str=expression.text.toString()
                 expressionText(str)
             }else {
@@ -107,7 +107,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         multiply.setOnClickListener{
-            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
+            if(expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
                 str=expression.text.toString()
                 expressionText(str)
             }else {
@@ -116,7 +116,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         add.setOnClickListener{
-            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
+            if(expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
                 str=expression.text.toString()
                 expressionText(str)
             }else {
@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         subtract.setOnClickListener{
-            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
+            if(expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
                 str=expression.text.toString()
                 expressionText(str)
             }else {
@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity() {
             result.textSize=60F
         }
         dot.setOnClickListener{
-            if(expression.text.toString().endsWith(suffix = "%")||expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
+            if(expression.text.toString().endsWith(suffix ="/")||expression.text.toString().endsWith(suffix = "*")||expression.text.toString().endsWith(suffix = "+")||expression.text.toString().endsWith(suffix = "-")||expression.text.toString().endsWith(suffix = ".")){
                 str=expression.text.toString()
                 expressionText(str)
             }else {
